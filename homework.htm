@@ -1,222 +1,120 @@
-<html>
+<html lang="zh-CN">
 <head>
 <meta charset="UTF-8"/>
-<script>
-function myFunction1(){
-    var score1 = 0;
-    var x =document.getElementById("1").value;
-    if( x === "统一建模语言" ){
-       score1 += 5;
-     }
-     return score1 ;
-}
-</script>
-<script>
-function myFunction2(){
-    var score2 = 0;
-    var x=document.getElementById("2").value;
-    var y=document.getElementById("3").value;
-    var z= document.getElementById("4").value;
-    var answer = [x,y,z];
-    var answer1 = ["封装性", "继承性" ,"多态性"];
-    for(var i = 0; i<3; i++){
-      for(var j = 0; j<3; j++){
-      if (answer1[i] === answer[j]){
-        score2 += 5;
-        break ;
-       }
-     }
-  }
-
-    return score2 ;
-}
-</script>
-<script>
-function myFunction3(){
-  var score3 = 0;
-  var answer = document.getElementsByName("Six");
-  if(answer[1].checked)
-  score3 += 10;
-
-return score3;
-}
-</script>
-
-<script>
-function myFunction4(){
-  var score4 = 0;
-  var Seven = document.getElementsByName("Seven");
-  if(Seven[0].checked){
-    score4 +=10;
-
-  }
-  return score4;
-}
-</script>
-
-<script>
-function myFunction5(){
-  var score5 = 0;
-  var Eight = document.getElementsByName("Eight");
-  if(Eight[0].checked && Eight[1].checked && Eight[3].checked){
-   score5 += 10;
- }
- return score5;
-}
-</script>
-
-<script>
-function myFunction6(){
-  var score6 = 0;
-  var Nine = document.getElementsByName("Nine");
-  if(Nine[0].checked && Nine[1].checked && Nine[2].checked){
-   score6 += 10;
- }
- return score6;
-}
-</script>
-
-<script>
-function myFunction7(){
-  var score7 = 0;
-  var Ten = document.getElementsByName("first");
-  if(Ten[0].checked){
-    score7 += 10;
-  }
-  return score7;
-}
-</script>
-
-<script>
-
-function myFunction8(){
-  var score8 = 0;
-  var Eleven = document.getElementsByName("second");
-  if(Eleven[1].checked){
-    score8 += 10;
-  }
-  return score8;
-}
-</script>
-
-<script>
-function myFunction9(){
-  var score9 = 0;
-
-  var Final = document.getElementById("0");
-
-  if(Final.value === "模型是对现实世界的简化和抽象,模型是对所研究的系统、过程、事物或概念的一种表达形式。可以是物理实体;可以是某种图形;或者是一种数学表达式。"){
-    score9 += 20;
-  }
-  return score9;
-}
-</script>
-<script>
-function myBossFunction(){
-    var score1 = myFunction1();
-    var score2 = myFunction2();
-    var score3 = myFunction3();
-    var score4 = myFunction4();
-    var score5 = myFunction5();
-    var score6 = myFunction6();
-    var score7 = myFunction7();
-    var score8 = myFunction8();
-    var score9 = myFunction9();
-    var Score = score1 ;
-    Score += score2;
-    Score += score3;
-    Score += score4;
-    Score += score5;
-    Score += score6;
-    Score += score7;
-    Score += score8;
-    Score += score9;
-    var ABC = document.getElementById("OK");
-    ABC.value = Score;
-    console.log (Score);
-    return Score;
-}
-</script>
-
+<link rel="stylesheet" type="text/css" href="lib/bootstrap-3.2.0-dist/css/bootstrap.min.css">
+<script src="lib/bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
+<script type="text/javaScript" src="JAVA.js"></script>
 
 </head>
 
 <body>
 
-  <h1> 统一建模语言理论测试 </h1>
-  <pre>
-考试科目:统一建模语言 UML       时间: 100 分钟          得分: <input type="text" id="OK">
-<form>
-班级:<form><input type="text" name="grade"> </form>
-学号:<form><input type="text" name="card"></form>
-姓名:<form><input type="text" name="name"></form>
-</form>
-</pre>
+  <div class = "container">
+    <form>
+<h1 style="text-align:center"；> 统一建模语言理论测试 </h1>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-4">考试科目:统一建模语言 UML</div>
+      <div class="col-md-4">时间:100 分钟</div>
+      <div class="col-md-4">得分:<span id="OK" value=""></span></div>
+
+    </div>
+  </div>
+</div>
 
 
-<p><font size="5">一、 填空题</font></p>
-<form>
 
-1. UML 的中文全称是:<input name="txt" type="text" Id="1">。
-</form>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-4">
+        <div  id="class">班级（必填）:<input class="form-control" type="text" id= "inputgrade" name="grade"></div>
+      </div>
+          <div class="col-md-4">
+             <div  id="card">学号（必填）:<input class="form-control" type="text" id= "inputcard" name="card"></div>
+          </div>
+              <div class="col-md-4">
+                <div  id="name">姓名（必填）:<input class="form-control" type="text" id= "inputname" name="name"></div>
+              </div>
+    </div>
+  </div>
+</div>
 
-<pre>
-2. 对象最突出的特征是:<input type="text" name="firstname" id="2">、<input type="text" name="firstname" id="3">、<input type="text" name="firstname" id="4">。
 
-</pre>
+<div class="panel panel-default">
+   <div class="panel-heading" ><h3>一、填空题</h3></div>
+    <div class="panel-body">
+      1. UML 的中文全称是:<input name="txt" type="text" id="one">
+    </div>
+    <div class="panel-body">
+      2. 对象最突出的特征是:<input type="text"  id="two">、<input type="text"  id="three">、<input type="text"  id="four">
+    </div>
+</div>
 
-<p><font size="5"> 二、 选择题</font></p>
-<pre>
-<p>
-1.UML 与软件工程的关系是:【】
-(A)UML 就是软件工程<input type="radio"  name="Six" value="male" />
-(B)UML 参与到软件工程中软件开发过程的几个阶段<input type="radio"  name="Six" value="male" />
-(C)UML 与软件工程无关<input type="radio" name="Six" value="male" />
-(D)UML 是软件工程的一部分<input type="radio"  name="Six" value="male" />
-</p>
-<p>
-2.Java 语言支持:【】
-(A)单继承<input type="radio"  name="Seven" value="male" />
-(B)多继承<input type="radio"  name="Seven" value="male" />
-(C)单继承和多继承都支持<input type="radio"  name="Seven" value="male" />
-(D)单继承和多继承都不支持<input type="radio"  name="Seven" value="male" />
-<p>
-</pre>
-<p><font size="5">三、 多选题</font></p>
-<pre>
-1. 用例的粒度分为以下哪三种。
-(A)概述级、<input type="checkbox" name="Eight">
-(B)需求级<input type="checkbox" name="Eight">
-(C)用户目标级、<input type="checkbox" name="Eight">
-(D)子功能级<input type="checkbox" name="Eight">
-2. 类图由以下哪三部分组成。
-(A)名称(Name)<input type="checkbox" name="Nine">
-(B)属性(Attribute)<input type="checkbox" name="Nine">
-(C)操作(Operation)<input type="checkbox" name="Nine">
-(D)方法(Function)<input type="checkbox" name="Nine">
-</pre>
+<div class="panel panel-default">
+   <div class="panel-heading" ><h3>二、选择题</h3></div>
+    <div class="panel-body">
+      1.UML 与软件工程的关系是:<br>
+      <input type="radio" name="choice" value="A" id="A"/><label for="A">(A)UML 就是软件工程</label><br>
+      <input type="radio" name="choice" value="B" id="B"/><label for="B">(B)UML 参与到软件工程中软件开发过程的几个阶段</label><br>
+      <input type="radio" name="choice" value="C" id="C"/><label for="C">(C)UML 与软件工程无关</label><br>
+      <input type="radio" name="choice" value="D" id="D"/><label for="D">(D)UML 是软件工程的一部分</label><br>
+    </div>
+    <div class="panel-body">
+      2.Java 语言支持:<br>
+      <input type="radio" name="choice2" value="A" id="1"/><label for="1">(A)单继承</label><br>
+      <input type="radio" name="choice2" value="B" id="2"/><label for="2">(B)多继承</label><br>
+      <input type="radio" name="choice2" value="C" id="3"/><label for="3">(C)单继承和多继承都支持</label><br>
+      <input type="radio" name="choice2" value="D" id="4"/><label for="4">(D)单继承和多继承都不支持</label><br>
+    </div>
+</div>
+<div class="panel panel-default">
+   <div class="panel-heading" ><h3>三、多选题</h3></div>
+    <div class="panel-body">
+      1. 用例的粒度分为以下哪三种。<br>
+        <input type="checkbox" name="choice3" value="A" id="five"/><label for="five">(A)概述级</label><br>
+        <input type="checkbox" name="choice3" value="B" id="six"/><label for="six">(B)需求级</label><br>
+        <input type="checkbox" name="choice3" value="C" id="seven"/><label for="seven">(C)用户目标级</label><br>
+        <input type="checkbox" name="choice3" value="D" id="eight"/><label for="eight">(D)子功能</label><br>
+      </div>
+      <div class="panel-body">
+      2. 类图由以下哪三部分组成。<br>
+        <input type="checkbox" name="choice4" value="A" id="a"/><label for="a">(A)名称(Name)</label><br>
+        <input type="checkbox" name="choice4" value="B" id="b"/><label for="b">(B)属性(Attribute)</label><br>
+        <input type="checkbox" name="choice4" value="C" id="c"/><label for="c">(C)操作(Operation)</label><br>
+        <input type="checkbox" name="choice4" value="D" id="d"/><label for="d">(D)方法(Function)</label><br>
+      </div>
+</div>
 
-<p><font size="5">四、 判断题</font></p>
-<pre>
-<p>
-1. 用例图只是用于和客户交流和沟通的,用于确定需求。
-X<input type="radio" name="first" value="X" >
-V<input type="radio" name="first" value="V" >
-</p>
-<p>
-2. 在状态图中,终止状态在一个状态图中允许有任意多个。
-X<input type="radio" name="second" value="X" >
-V<input type="radio" name="second" value="V" >
-</p>
-</pre>
+<div class="panel panel-default">
+  <div class="panel-heading" ><h3>四、判断题</h3></div>
+    <div class="panel-body">
+      1. 用例图只是用于和客户交流和沟通的,用于确定需求。<br>
+      <span class="glyphicon glyphicon-remove" style="color:red"><input type="radio" name="first" value="X" ><br>
+      <span class="glyphicon glyphicon-ok" style="color:green"><input type="radio" name="first" value="V" ><br>
+    </div>
+      <div class="panel-body">
+      2. 在状态图中,终止状态在一个状态图中允许有任意多个。<br>
+      <span class="glyphicon glyphicon-remove" style="color:red"></span><input type="radio" name="second" value="X"><br>
+      <span class="glyphicon glyphicon-ok" style="color:green"></span><input type="radio" name="second" value="V"><br>
+      </div>
+</div>
+<div class="panel panel-default">
+  <div class="panel-heading" ><h3>五、简答题</h3></div>
+    <div class="panel-body">
+      1. 简述什么是模型以及模型的表现形式?<br>
+      <textarea rows="3" cols="20" id="0">
+      </textarea>
 
-<p><font size="5">五、 简答题(每题4分,共20分)</font></p>
-<pre>
-1. 简述什么是模型以及模型的表现形式?
-<textarea rows="3" cols="20" id="0">
-</textarea>
-</pre>
+</div>
+</div>
 <button type="button" onclick="myBossFunction()">Submit</button>
 
+    </div>
+
+  </form>
+
 </body>
+
 </html>
