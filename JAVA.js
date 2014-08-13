@@ -1,38 +1,79 @@
-function myFunction1(){
+function fillBlank (){
+    var fillBlank1 = new Topic("fillblank1",['统一建模语言'],1,5)
     var score1 = 0;
     var x =document.getElementById("one").value;
-    if( x.value === "统一建模语言" ){
-       score1 += 5;
-     }
-     return score1 ;
-}
+    if( x.value === fillBlank1.answer[0]){
+     score1 += fillBlank1.score;
+     };
+     var score2 = 0;
+     var fullBlank2 = new Topic('fullblank2',['继承性','多态性','封装性'],3,5);
+     var y = [];
+     y.push(document.getElementById('two').value);
+     y.push(document.getElementById('three').value);
+     y.push(document.getElementById('four').value);
+       for(var i = 0; i < fullBlank2.answer.length; i++){
+         for(var j = 0;j < y.length; j++){
+           if(fullBlank2.answer[i] == y[j]){
+             score2 +=  fullBlank2.score;
+             break;
+          }
 
-function myFunction2(){
-    var score2 = 0;
-    var x=document.getElementById("two").value;
-    var y=document.getElementById("three").value;
-    var z= document.getElementById("four").value;
-    var answer = [x,y,z];
-    var answer1 = ["封装性", "继承性" ,"多态性"];
-    for(var i = 0; i<3; i++){
-      for(var j = 0; j<3; j++){
-      if (answer1[i] === answer[j]){
-        score2 += 5;
-        break ;
-       }
-     }
+      }
+
   }
-
-    return score2 ;
+    return score1 + score2;
 }
+
+
+
+
+
+
+
+
+//function myFunction1(){
+//    var score1 = 0;
+//    var x =document.getElementById("one").value;
+
+//    if( x.value === "统一建模语言" ){
+//       score1 += 5;
+//     }
+//     return score1 ;
+//}
+
+//function myFunction2(){
+//    var score2 = 0;
+//    var x=document.getElementById("two").value;
+//    var y=document.getElementById("three").value;
+//    var z= document.getElementById("four").value;
+  //  var answer = [x,y,z];
+//    var answer1 = ["封装性", "继承性" ,"多态性"];
+//    for(var i = 0; i<3; i++){
+//      for(var j = 0; j<3; j++){
+//      if (answer1[i] === answer[j]){
+//        score2 += 5;
+//        break ;
+//       }
+//     }
+//  }
+
+//    return score2 ;
+//}
+function singleChoose(){
+  var singlechoice = new Topic ('singlechoice',['B','A'],2,10);
+  var score1 = 0;
+  var answer = document.getElementsByName("choice");
+
+}
+
 
 function myFunction3(){
-  var score3 = 0;
-  var answer = document.getElementsByName("choice");
-  if(answer[1].checked)
-  score3 += 10;
+    var score3 = 0;
+    var answer = document.getElementsByName("choice");
+    if(answer[1].checked)
+    score3 += 10;
 
-return score3;
+  return score3;
 }
 
 function myFunction4(){
@@ -94,7 +135,7 @@ function myFunction9(){
 }
 
 function myBossFunction(){
-    var score1 = myFunction1();
+    var score1 = fillBlank();
     var score2 = myFunction2();
     var score3 = myFunction3();
     var score4 = myFunction4();
