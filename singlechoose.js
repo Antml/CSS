@@ -6,7 +6,7 @@ function Singlechoose(name) {
 
 }
 Singlechoose.prototype.getValue = function () {
-    var choice = document.getElementsByName(this.name)
+    var choice = $('this.name')
     for (var i = 0; i < choice.length; i++) {
         var value = '';
         if (choice[i].checked == true) {

@@ -118,7 +118,7 @@ function getSingleChooseScore (){
 
 function myFunction5() {
     var score5 = 0;
-    var Eight = document.getElementsByName("choice3");
+    var Eight = $('input[name="choice3"]');
     if (Eight[0].checked && Eight[1].checked && Eight[3].checked && !(Eight[2].checked)) {
         score5 += 10;
     }
@@ -127,7 +127,7 @@ function myFunction5() {
 
 function myFunction6() {
     var score6 = 0;
-    var Nine = document.getElementsByName("choice4");
+    var Nine = $('input[name="choice4"]');
     if (Nine[0].checked && Nine[1].checked && Nine[2].checked && !(Nine[3].checked)) {
         score6 += 10;
         return score6;
@@ -137,7 +137,7 @@ function myFunction6() {
 
 function myFunction7() {
     var score7 = 0;
-    var Ten = document.getElementsByName("first");
+    var Ten = $('input[name="first"]');
     if (Ten[0].checked) {
         score7 += 10;
     }
@@ -146,7 +146,7 @@ function myFunction7() {
 
 function myFunction8() {
     var score8 = 0;
-    var Eleven = document.getElementsByName("second");
+    var Eleven = $('input[name="second"]');
     if (Eleven[1].checked) {
         score8 += 10;
     }
@@ -156,7 +156,7 @@ function myFunction8() {
 function myFunction9() {
     var score9 = 0;
 
-    var Final = document.getElementById("0");
+    var Final = $("#0");
 
     if (Final.value === "模型是对现实世界的简化和抽象,模型是对所研究的系统、过程、事物或概念的一种表达形式。可以是物理实体;可以是某种图形;或者是一种数学表达式。") {
         score9 += 20;
@@ -181,16 +181,15 @@ function myBossFunction() {
     Score += score7;
     Score += score8;
     Score += score9;
-    var ABC = document.getElementById("OK");
-
+var ABC =document.getElementById("OK");
     if (judgeBasicInformation()) {
-        ABC.innerHTML = Score + "分";
-        ABC.className = "text-danger";
+        $("#OK").text(+Score + "分");
+        $("#total").addClass("text-danger");
 
         alert("您本次考试得分：" + Score + "分");
     }
     else {
-        alert("请填写基本信息!");
+        $('#myModal').modal();
     }
     return Score;
 
@@ -207,26 +206,29 @@ function myBossFunction() {
 
 function judgeBasicInformation() {
 
-    var student_name = document.getElementById("inputname");
-    var student_Id = document.getElementById("inputcard");
-    var student_grade = document.getElementById("inputgrade");
-    if (student_name.value) {
+    var student_name = $("#inputname");
+    var student_Id = $("#inputcard");
+    var student_grade = $("#inputgrade");
+    if (student_name.val()) {
         var judgement1 = true;
+        $("#name").removeClass("has-error");
     }
     else {
-        document.getElementById("name").className = "has-error";
+        $("#name").addClass("has-error");
     }
-    if (student_Id.value) {
+    if (student_Id.val()) {
         var judgement2 = true;
+        $("#card").removeClass("has-error");
     }
     else {
-        document.getElementById("card").className = "has-error";
+        $("#card").addClass("has-error");
     }
-    if (student_grade.value) {
+    if (student_grade.val()) {
         var judgement3 = true;
+        $("#class").removeClass("has-error");
     }
     else {
-        document.getElementById("class").className = "has-error";
+        $("#class").addClass("has-error");
     }
 
     return judgement1 && judgement2 && judgement3;

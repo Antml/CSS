@@ -7,7 +7,7 @@ function FillBlank(id) {
 FillBlank.prototype.matchOne = function () {
     var fillBlank1 = new Topic("fillblank1", ['统一建模语言'], 1);
     var score = 0;
-    var x = document.getElementById(this.id).value;
+    var x = $('#'+this.id)[0].value;
     if (x === fillBlank1.answer[0]) {
         score += 5;
         }
